@@ -1,9 +1,10 @@
+require 'pry'
 module AmazonPa
   module Operations
-    class ItemSearch
+    class ItemLookup
       class << self
-        def request(keywords)
-          params = request_params(keywords)
+        def request(item_id)
+          params = request_params(item_id)
           url = AmazonPa::Api.url(params)
           LOG.info("Request URL: #{url}")
           res = Net::HTTP.get_response(url)
@@ -14,13 +15,12 @@ module AmazonPa
 
         private
 
-        def request_params(keywords)
+        def request_params(item_id)
           {
             Operation: self.name.split('::').last,
-            Keywords: keywords,
-            ResponseGroup: 'Small',
-            Availability: 'Available',
-            ItemPage: '1'
+            Condition: 'All',
+            ItemId: item_id,
+            ResponseGroup: 'Medium'
           }
         end
       end

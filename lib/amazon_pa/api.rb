@@ -14,10 +14,7 @@ module AmazonPa
       end
 
       def url(params)
-        url = signatured_url(unsigned_url(params))
-        # TODO: log
-        p url
-        url
+        signatured_url(unsigned_url(params))
       end
 
       private
