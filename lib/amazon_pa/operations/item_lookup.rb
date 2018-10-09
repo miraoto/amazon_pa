@@ -3,8 +3,8 @@ module AmazonPa
   module Operations
     class ItemLookup
       class << self
-        def request(item_id)
-          params = request_params(item_id)
+        def request(item_id, options = {})
+          params = request_params(item_id, options)
           url = AmazonPa::Api.url(params)
           LOG.info("Request URL: #{url}")
           res = Net::HTTP.get_response(url)
@@ -15,13 +15,13 @@ module AmazonPa
 
         private
 
-        def request_params(item_id)
+        def request_params(item_id, options)
           {
             Operation: self.name.split('::').last,
             Condition: 'All',
             ItemId: item_id,
             ResponseGroup: 'Medium'
-          }
+          }.merge(options)
         end
       end
     end

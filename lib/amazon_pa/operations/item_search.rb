@@ -2,8 +2,8 @@ module AmazonPa
   module Operations
     class ItemSearch
       class << self
-        def request(keywords)
-          params = request_params(keywords)
+        def request(keywords, options = {})
+          params = request_params(keywords, options)
           url = AmazonPa::Api.url(params)
           LOG.info("Request URL: #{url}")
           res = Net::HTTP.get_response(url)
@@ -14,7 +14,7 @@ module AmazonPa
 
         private
 
-        def request_params(keywords)
+        def request_params(keywords, options)
           {
             Operation: self.name.split('::').last,
             Keywords: keywords,
@@ -22,7 +22,7 @@ module AmazonPa
             Availability: 'Available',
             SearchIndex: 'All',
             ItemPage: '1'
-          }
+          }.merge(options)
         end
       end
     end

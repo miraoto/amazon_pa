@@ -1,6 +1,6 @@
 require 'amazon_pa/api'
 require 'amazon_pa/config'
-require 'amazon_pa/response'
+require 'amazon_pa/element'
 
 RSpec.describe AmazonPa do
   before :all do
