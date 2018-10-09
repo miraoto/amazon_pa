@@ -20,6 +20,7 @@ module AmazonPa
             Keywords: keywords,
             ResponseGroup: 'Small',
             Availability: 'Available',
+            SearchIndex: 'All',
             ItemPage: '1'
           }
         end
