@@ -1,8 +1,6 @@
 # AmazonPa
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/amazon_pa`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+`AmazonPa` gem is easy using Amazon Product Advertising API(https://affiliate.amazon.co.jp/assoc_credentials/home) for Ruby.
 
 ## Installation
 
@@ -19,6 +17,18 @@ And then execute:
 Or install it yourself as:
 
     $ gem install amazon_pa
+
+Add configure:
+
+```ruby
+AmazonPa::Config.configure do |config|
+  config.locale = :jp
+  config.service_url = AmazonPa::Config.service_url
+  config.access_key = '<!-- Add access key -->'
+  config.secret_key = '<!-- Add secret key -->'
+  config.associate_tag = '<!-- Add associate tag -->'
+end
+```
 
 ## Usage
 

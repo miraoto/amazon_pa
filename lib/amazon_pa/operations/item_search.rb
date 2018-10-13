@@ -14,6 +14,7 @@ module AmazonPa
 
         private
 
+        # Restrict SearchIndex combination to https://images-na.ssl-images-amazon.com/images/G/09/associates/paapi/dg/index.html?APPNDX_SearchIndexParamForItemsearch.html
         def request_params(keywords, options)
           {
             Operation: self.name.split('::').last,
