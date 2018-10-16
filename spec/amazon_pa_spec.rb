@@ -28,5 +28,6 @@ RSpec.describe AmazonPa do
     response = instance::request('4274065979')
     expect(response.header.code).to eq "200"
     expect(response.body.get_element('Items/Item').get('ASIN')). to eq '4274065979'
+    expect(response.body.get_element('Items/Item/ItemAttributes').get('Author')). to eq 'ポール グレアム''
   end
 end

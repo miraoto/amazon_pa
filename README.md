@@ -41,6 +41,11 @@ Search item attributes by ASIN
   p response.body.get_element('Items/Item').get('ASIN') # 4274065979
 ```
 
+## Supporting operations
+
+ * ItemSearch
+ * ItemLookup
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
