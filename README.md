@@ -1,5 +1,7 @@
 # AmazonPa
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/543d63503ee0d80beb17/maintainability)](https://codeclimate.com/github/miraoto/amazon_pa/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/543d63503ee0d80beb17/test_coverage)](https://codeclimate.com/github/miraoto/amazon_pa/test_coverage) [![Build Status](https://travis-ci.org/miraoto/amazon_pa.svg?branch=master)](https://travis-ci.org/miraoto/amazon_pa) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 `AmazonPa` gem is easy using Amazon Product Advertising API(https://affiliate.amazon.co.jp/assoc_credentials/home) for Ruby.
 
 ## Installation
