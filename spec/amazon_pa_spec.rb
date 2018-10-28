@@ -7,9 +7,9 @@ RSpec.describe AmazonPa do
     AmazonPa::Config.configure do |config|
       config.locale = :jp
       config.service_url = AmazonPa::Config.service_url
-      config.access_key = '<!-- Add access key -->'
-      config.secret_key = '<!-- Add secret key -->'
-      config.associate_tag = '<!-- Add associate tag -->'
+      config.access_key = ENV['AMAZON_PA_ACCESS_KEY']
+      config.secret_key = ENV['AMAZON_PA_SECRET_KEY']
+      config.associate_tag = ENV['AMAZON_PA_ASSOCIATE_TAG']
     end
   end
 
