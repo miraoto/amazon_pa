@@ -13,21 +13,21 @@ RSpec.describe AmazonPa do
     end
   end
 
-  it "has a version number" do
+  it 'has a version number' do
     expect(AmazonPa::VERSION).not_to be nil
   end
 
-  it "operator(:item_search)" do
+  it 'operator(:item_search)' do
     instance = AmazonPa::Api.request(:item_search)
     response = instance::request('iPhone')
-    expect(response.header.code).to eq "200"
+    expect(response.header.code).to eq '200'
   end
 
-  it "operator(:item_lookup)" do
+  it 'operator(:item_lookup)' do
     instance = AmazonPa::Api.request(:item_lookup)
     response = instance::request('4274065979')
-    expect(response.header.code).to eq "200"
-    expect(response.body.get_element('Items/Item').get('ASIN')). to eq '4274065979'
-    expect(response.body.get_element('Items/Item/ItemAttributes').get('Author')). to eq 'ポール グレアム''
+    expect(response.header.code).to eq '200'
+    expect(response.body.get_element('Items/Item').get('ASIN')).to eq '4274065979'
+    expect(response.body.get_element('Items/Item/ItemAttributes').get('Author')).to eq 'ポール グレアム'
   end
 end
